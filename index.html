@@ -1,0 +1,57 @@
+<head>
+    <title>ClearMail - AI Email Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>✉ClearMail</h1>
+
+    <p class="tagline">
+        Rewrite emails instantly with professional AI-powered writing.
+    </p>
+
+    <p style="text-align:center;color:#666;">
+✓ Professional &nbsp;&nbsp;
+✓ Friendly &nbsp;&nbsp;
+✓ Confident &nbsp;&nbsp;
+✓ Polite
+</p>
+
+    <textarea
+        id="emailInput"
+        placeholder="Paste your email here...">
+    </textarea>
+
+    <select id="tone">
+        <option value="professional">Professional</option>
+        <option value="friendly">Friendly</option>
+        <option value="confident">Confident</option>
+        <option value="polite">Polite</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="fixEmail()" id="btn">
+    Fix My Email
+    </button>
+
+    <h3 class="output-title">Output</h3>
+
+    <textarea id="output"></textarea>
+
+    <br>
+
+    <button onclick="copyOutput()">
+        Copy Email
+    </button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
