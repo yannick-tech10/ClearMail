@@ -1,16 +1,12 @@
+alert("SCRIPT LOADED");
+console.log("SCRIPT LOADED");
 async function fixEmail() {
 
-    const email = document.getElementById("emailInput").value;
-
-    if (!email.trim()) {
-        alert("Please enter an email first.");
-        return;
-    }
-
-    const button = document.querySelector("button");
+    const button = document.getElementById("fixButton");
+    const output = document.getElementById("output");
 
     button.disabled = true;
-    button.textContent = "Rewriting...";
+    button.textContent = "✨ Rewriting...";
 
     try {
 
@@ -20,24 +16,26 @@ async function fixEmail() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                email: email,
+                email: document.getElementById("emailInput").value,
                 tone: document.getElementById("tone").value
             })
         });
 
         const data = await response.json();
 
-        document.getElementById("output").value = data.result;
+        output.value = data.result;
 
     } catch (error) {
 
         console.error(error);
-
-        document.getElementById("output").value =
-            "Error: something went wrong";
+        output.value = "Something went wrong. Please try again.";
 
     }
 
     button.disabled = false;
-    button.textContent = "Fix My Email";
+    button.textContent = "✨ Fix Email";
+}
+
+function copyOutput() {
+    alert("COPY CLICKED");
 }
