@@ -37,5 +37,11 @@ async function fixEmail() {
 }
 
 function copyOutput() {
-    alert("COPY CLICKED");
+    const output = document.getElementById("output");
+
+    if (!output.value) return;
+
+    navigator.clipboard.writeText(output.value);
+
+    alert("Copied to clipboard ✅");
 }
