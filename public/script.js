@@ -43,5 +43,10 @@ function copyOutput() {
 
     navigator.clipboard.writeText(output.value);
 
-    alert("Copied to clipboard ✅");
+    const button = document.getElementById("copyButton");
+    button.textContent = "Copied ✔";
+
+    setTimeout(() => {
+        button.textContent = "📋 Copy Email";
+    }, 1500);
 }
