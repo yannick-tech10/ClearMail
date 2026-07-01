@@ -23,11 +23,11 @@
 ✓ Polite
 </p>
 
-    <textarea
-        id="emailInput"
-        placeholder="Paste your email here...">
-    </textarea>
+    <div class="card">
+    <textarea id="emailInput" placeholder="Paste your email here..."></textarea>
+</div>
 
+    <div class="card">
     <select id="tone">
         <option value="professional">Professional</option>
         <option value="friendly">Friendly</option>
@@ -38,16 +38,14 @@
     <br><br>
 
     <button id="fixButton" onclick="fixEmail()">✨ Fix Email</button>
+</div>
 
+ <div class="card">
     <h3 class="output-title">Output</h3>
-
     <textarea id="output"></textarea>
 
-    <br>
-
-    <button id="copyButton" onclick="copyOutput()">📋 Copy</button>
-
-</div>
+    <button id="copyButton" onclick="copyOutput()">📋 Copy Email</button>
+</div>   
 
 <script src="script.js"></script>
 
