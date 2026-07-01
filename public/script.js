@@ -1,5 +1,4 @@
-alert("SCRIPT LOADED");
-console.log("SCRIPT LOADED");
+
 async function fixEmail() {
 
     const button = document.getElementById("fixButton");
