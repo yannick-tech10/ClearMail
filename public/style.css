@@ -88,3 +88,14 @@ button:hover {
     text-transform: uppercase;
     letter-spacing: 0.08em;
 }
+.container > * {
+    margin-bottom: 18px;
+}
+
+button {
+    margin-top: 8px;
+}
+
+#output {
+    margin-top: 8px;
+}
