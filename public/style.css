@@ -155,3 +155,27 @@ button {
     font-size: 15px;
     letter-spacing: 0.03em;
 }
+
+.footer {
+    margin-top: 50px;
+    padding: 30px 20px;
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #2563eb;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #1d4ed8;
+}
