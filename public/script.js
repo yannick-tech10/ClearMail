@@ -24,6 +24,8 @@ async function fixEmail() {
         const data = await response.json();
 
         output.value = data.result;
+        button.disabled = false;
+        button.innerHTML = "✨ Fix Email";
 
     } catch (error) {
 
