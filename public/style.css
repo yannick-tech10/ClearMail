@@ -146,3 +146,12 @@ button {
     font-size: 14px;
     line-height: 1.6;
 }
+
+.brand {
+    margin-top: -10px;
+    margin-bottom: 12px;
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+}
