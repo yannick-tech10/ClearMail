@@ -108,8 +108,12 @@ button {
 }
 
 #output {
-    margin-top: 8px;
+    background: #f9fafb;
+    border: 1px solid #dbe3ee;
+    font-size: 15px;
+    line-height: 1.7;
 }
+
 .card {
     background: #ffffff;
     border: 1px solid #e5e7eb;
