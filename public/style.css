@@ -183,3 +183,16 @@ button {
 .footer-links a:hover {
     color: #1d4ed8;
 }
+
+#regenerateButton {
+    margin-top: 12px;
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    box-shadow: none;
+}
+
+#regenerateButton:hover {
+    background: #e5e7eb;
+    transform: translateY(-1px);
+}
