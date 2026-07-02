@@ -269,3 +269,20 @@ button {
     line-height: 1.6;
     font-size: 15px;
 }
+
+.logo-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-header img {
+    width: 36px;
+    height: 36px;
+}
+
+.logo-header h1 {
+    margin: 0;
+    font-size: 30px;
+    color: #111827;
+}
