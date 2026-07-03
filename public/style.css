@@ -286,3 +286,19 @@ button {
     font-size: 30px;
     color: #111827;
 }
+
+.hero-button {
+    margin-top: 30px;
+    padding: 18px 34px;
+    width: auto;
+    display: inline-block;
+    background: #2563eb;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+}
