@@ -301,15 +301,16 @@ button {
     font-size: 15px;
 }
 
-.logo-header {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+.logo-header{
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
-.logo-header img {
-    width: 34px;
-    height: 34px;
+.logo-header img{
+    width:180px;
+    height:auto;
+    display:block;
 }
 
 .logo-header h1 {
