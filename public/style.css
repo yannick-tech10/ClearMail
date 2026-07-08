@@ -236,14 +236,16 @@ button {
     transform: translateY(-1px);
 }
 
-.navbar {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 12px 20px;
+.navbar{
+    max-width:1100px;
+    margin:0 auto;
+    padding:12px 20px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    flex-wrap:nowrap;
 }
 
 .logo {
@@ -252,10 +254,13 @@ button {
     color: #111827;
 }
 
-.nav-links {
-    display: flex;
-    gap: 28px;
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    margin-left:auto;
 }
+
 .nav-links a {
     color: #6b7280;
     text-decoration: none;
@@ -306,13 +311,12 @@ button {
 .logo-header{
     display:flex;
     align-items:center;
-    gap:4px;
+    gap:2px;
 }
 
 .logo-header img{
-    width:88px;
-    height:88px;
-    object-fit:contain;
+    width:48px;
+    height:48px;
     display:block;
 }
 
