@@ -1,4 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClearMail - AI Email Assistant</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,19 +15,19 @@
 <nav class="navbar">
 
     <div class="logo-header">
-        <img src="logo.png" alt="ClearMail Logo">
+        <img src="logo.png" alt="ClearMail Logo" class="nav-logo">
         <h1>ClearMail</h1>
     </div>
 
     <div class="nav-links">
         <a href="#">Features</a>
         <a href="about.html">About</a>
-        <a href="#">Pricing</a>
+        <a href="#pricing">Pricing</a>
     </div>
 
 </nav>
 
-    <div class="hero">
+<div class="hero">
     <h1>Professional emails in seconds.</h1>
 
     <p class="subtitle">
@@ -31,11 +35,11 @@
     </p>
 
     <button class="hero-button" onclick="document.getElementById('tool').scrollIntoView({ behavior: 'smooth' })">
-    Try ClearMail Free →
-</button>
+        Try ClearMail Free →
+    </button>
 
- <p class="hero-note">
-        Free to use • No signup required
+    <p class="hero-note">
+        Try 3 emails free • No credit card required
     </p>
 
     <div class="trust">
@@ -72,55 +76,74 @@
 <div class="container" id="tool">
 
     <div class="tone-tags">
-    ✓ Professional
-    ✓ Friendly
-    ✓ Confident
-    ✓ Polite
-</div>
+        ✓ Professional
+        ✓ Friendly
+        ✓ Confident
+        ✓ Polite
+    </div>
 
-    
     <textarea id="emailInput" placeholder="Paste your email here..."></textarea>
 
+    <div class="card">
+        <select id="tone">
+            <option value="professional">Professional</option>
+            <option value="friendly">Friendly</option>
+            <option value="confident">Confident</option>
+            <option value="polite">Polite</option>
+        </select>
+
+        <br><br>
+
+        <button id="fixButton" onclick="fixEmail()">✨ Fix Email</button>
+    </div>
 
     <div class="card">
-    <select id="tone">
-        <option value="professional">Professional</option>
-        <option value="friendly">Friendly</option>
-        <option value="confident">Confident</option>
-        <option value="polite">Polite</option>
-    </select>
+        <h3 class="output-title">Output</h3>
+        <textarea id="output" readonly></textarea>
 
-    <br><br>
+        <button id="copyButton" onclick="copyOutput()">📋 Copy Email</button>
+        <button id="regenerateButton" onclick="fixEmail()">
+            🔄 Regenerate
+        </button>
+    </div>  
 
-    <button id="fixButton" onclick="fixEmail()">✨ Fix Email</button>
-</div>
+    <section id="pricing" class="pricing-section">
+        <div class="pricing-card">
+            <span class="badge">Early Bird Offer</span>
+            <h2>ClearMail Pro</h2>
+            <div class="price">$7<span>/month</span></div>
+            <ul class="pricing-features">
+                <li>✓ Uncapped daily email rewrites</li>
+                <li>✓ Priority AI generation speeds</li>
+                <li>✓ Save your favorite templates</li>
+                <li>✓ Lifetime 50% discount locked in forever</li>
+            </ul>
+            
+            <div id="waitlistForm">
+                <p class="waitlist-text">We are capping Pro slots this week to protect server stability. Enter your email to lock in your discount code.</p>
+                <div class="input-group">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button class="pricing-button">Get Early Access</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
- <div class="card">
-    <h3 class="output-title">Output</h3>
-    <textarea id="output" readonly></textarea>
+    <footer class="footer">
+        <p>© 2026 ClearMail. All rights reserved.</p>
 
-    <button id="copyButton" onclick="copyOutput()">📋 Copy Email</button>
-    <button id="regenerateButton" onclick="fixEmail()">
-    🔄 Regenerate
-    </button>
-</div>  
-
-<footer class="footer">
-    <p>© 2026 ClearMail. All rights reserved.</p>
-
-    <div class="footer-links">
-        <a href="privacy.html">Privacy</a>
-        <span>•</span>
-        <a href="terms.html">Terms</a>
-        <span>•</span>
-        <a href="#">Contact</a>
-    </div>
-</footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy</a>
+            <span>•</span>
+            <a href="terms.html">Terms</a>
+            <span>•</span>
+            <a href="#">Contact</a>
+        </div>
+    </footer>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
