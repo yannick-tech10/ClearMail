@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ClearMail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+<nav class="navbar">
+    <div class="logo-header" style="cursor: pointer;" onclick="window.location.href='index.html'">
+        <img src="logo.png" alt="ClearMail Logo" class="nav-logo">
+        <h1>ClearMail</h1>
+    </div>
+    <div class="nav-links">
+        <a href="index.html#features">Features</a>
+        <a href="about.html">About</a>
+        <a href="index.html#pricing">Pricing</a>
+    </div>
+</nav>
+
+<div class="hero" style="margin-bottom: 20px;">
+    <h1>Get in Touch</h1>
+    <p class="subtitle">Have a feature request, found a bug, or just want to say hi? Drop us a line below.</p>
+</div>
+
+<div class="container">
+    <div class="card" style="max-width: 500px; margin: 0 auto; text-align: left;">
+        <form action="https://formspree.io/f/mdarqqqq" method="POST" style="display: flex; flex-direction: column; gap: 16px;">
+            <div>
+                <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #111827;">Your Email</label>
+                <input type="email" name="email" placeholder="you@example.com" required style="width: 100%; padding: 12px; border: 1px solid #e5e7eb; border-radius: 8px; font-family: inherit;">
+            </div>
+            
+            <div>
+                <label style="display: block; margin-bottom: 8px; font-weight: 500; color: #111827;">Message</label>
+                <textarea name="message" placeholder="What's on your mind?" required style="width: 100%; min-height: 120px; padding: 12px; border: 1px solid #e5e7eb; border-radius: 8px; font-family: inherit; resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" id="fixButton" style="width: 100%; margin-top: 10px;">✉️ Send Message</button>
+        </form>
+    </div>
+
+    <footer class="footer" style="margin-top: 80px;">
+        <p>© 2026 ClearMail. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy</a>
+            <span>•</span>
+            <a href="terms.html">Terms</a>
+            <span>•</span>
+            <a href="contact.html">Contact</a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
