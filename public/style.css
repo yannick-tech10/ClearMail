@@ -444,6 +444,18 @@ button:active {
 
 /* Responsive Fix for Mobile Screens */
 @media (max-width: 600px) {
+    /* 1. FORCE THE PAGE TO LOCK VERTICALLY (NO SIDE-SWIPING) */
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* 2. SHRINK PADDING SO CONTENT DOESN'T EXPLODE OUT THE RIGHT SIDE */
+    .container {
+        padding: 20px 15px; /* Shrunk from 40px so it fits phone screens beautifully */
+    }
+
+    /* --- Your Existing Mobile Rules Continue Below Safely --- */
     .navbar {
         flex-direction: column; /* Stacks the logo section above the links */
         gap: 12px;
@@ -476,17 +488,17 @@ button:active {
         font-size: 18px;
     }
 
-    /* FIX 1: Fix the broken trust badges line wrap */
+    /* Fix the broken trust badges line wrap */
     .tone-tags {
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
 
-    /* FIX 2: Give the pill button text more room to breathe */
+    /* Give the pill button text more room to breathe */
     .hero-note {
         padding: 10px 24px;
         max-width: 90%;
         box-sizing: border-box;
     }
-} /* <--- Added the missing closing bracket here! */
+} /* The master closing bracket that locks everything inside the media query */
