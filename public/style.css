@@ -1,9 +1,12 @@
+/* --- BASE SETUP & TYPOGRAPHY --- */
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background: linear-gradient(
         180deg,
         #eef5ff 0%,
@@ -12,8 +15,12 @@ body {
     );
     margin: 0;
     padding: 0 20px 40px;
+    color: #334155;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
+/* --- THE MAIN CONTENT CONTAINER --- */
 .container {
     max-width: 850px;
     margin: auto;
@@ -21,17 +28,31 @@ body {
     padding: 40px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    box-sizing: border-box;
 }
 
 .container > * {
     margin-bottom: 18px;
 }
 
+/* --- PREMIUM TYPOGRAPHY UPDATES --- */
 h1 {
     text-align: center;
-    font-size: 48px;
-    margin-bottom: 8px;
-    color: #111827;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    color: #0f172a;
+}
+
+/* Modern gradient accent for the headline words */
+.highlight-text {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 .tagline {
@@ -41,6 +62,7 @@ h1 {
     margin-bottom: 35px;
 }
 
+/* --- INTERACTIVE INPUTS & TEXTAREA --- */
 textarea {
     width: 100%;
     min-height: 180px;
@@ -82,9 +104,10 @@ select {
     border: 1px solid #d1d5db;
     font-size: 15px;
     margin-top: 15px;
+    box-sizing: border-box;
 }
 
-/* Base button rules */
+/* --- BUTTON BUILD ENGINE --- */
 button {
     width: 100%;
     padding: 14px 16px;
@@ -98,6 +121,7 @@ button {
     transition: all 0.2s ease;
     box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
     margin-top: 8px;
+    box-sizing: border-box;
 }
 
 button:hover {
@@ -124,6 +148,7 @@ button:active {
     transform: translateY(-1px);
 }
 
+/* --- CARDS & LAYOUT WRAPPERS --- */
 .card {
     background: #ffffff;
     border: 1px solid #e5e7eb;
@@ -131,6 +156,7 @@ button:active {
     padding: 18px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.04);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-sizing: border-box;
 }
 
 .card:hover {
@@ -138,7 +164,7 @@ button:active {
     box-shadow: 0 14px 32px rgba(0,0,0,0.08);
 }
 
-/* Navigation rules styling layout */
+/* --- NAVIGATION BRAND BAR --- */
 .navbar {
     max-width: 1100px;
     margin: 0 auto;
@@ -147,18 +173,18 @@ button:active {
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
+    box-sizing: border-box;
 }
 
 .logo-header {
     display: flex;
     align-items: center;
-    gap: 8px; /* Slightly adjusted for layout comfort */
+    gap: 8px;
 }
 
-/* Target and scale down your transparent PNG envelope logo safely */
 .logo-header .nav-logo {
     width: auto;
-    height: 36px; /* Perfect modern height in relation to text size */
+    height: 36px;
     display: block;
     object-fit: contain;
 }
@@ -188,7 +214,7 @@ button:active {
     color: #2563eb;
 }
 
-/* Hero & Copy Area rules */
+/* --- HERO CORE & COPY BLOCKS --- */
 .hero {
     position: relative;
     max-width: 900px;
@@ -265,6 +291,7 @@ button:active {
     color: #4b5563;
     font-size: 14px;
     line-height: 1.6;
+    box-sizing: border-box;
 }
 
 .features {
@@ -274,6 +301,7 @@ button:active {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .feature {
@@ -285,6 +313,7 @@ button:active {
     text-align: center;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-sizing: border-box;
 }
 
 .feature:hover {
@@ -313,11 +342,12 @@ button:active {
     font-weight: 500;
 }
 
-/* NEW PRICING SECTION RULES */
+/* --- PREMIUM PRICING INFRASTRUCTURE --- */
 .pricing-section {
     max-width: 480px;
     margin: 60px auto 20px;
     padding: 0 10px;
+    box-sizing: border-box;
 }
 
 .pricing-card {
@@ -328,6 +358,7 @@ button:active {
     text-align: center;
     position: relative;
     box-shadow: 0 12px 40px rgba(37, 99, 235, 0.08);
+    box-sizing: border-box;
 }
 
 .badge {
@@ -381,7 +412,7 @@ button:active {
 
 .pricing-features li:last-child {
     border-bottom: none;
-    color: #16a34a; /* Distinct highlight color for lifetime discount info */
+    color: #16a34a;
     font-weight: 500;
 }
 
@@ -417,7 +448,7 @@ button:active {
     margin-top: 0;
 }
 
-/* Footer layout rules */
+/* --- FOOTER BLOCKS --- */
 .footer {
     margin-top: 60px;
     padding: 30px 20px;
@@ -442,32 +473,29 @@ button:active {
     color: #1d4ed8;
 }
 
-/* Responsive Fix for Mobile Screens */
+/* --- GLOBAL MOBILE VIEWPORT REPAIRS --- */
 @media (max-width: 600px) {
-    /* 1. FORCE THE PAGE TO LOCK VERTICALLY (NO SIDE-SWIPING) */
     html, body {
         max-width: 100%;
         overflow-x: hidden;
     }
 
-    /* 2. SHRINK PADDING SO CONTENT DOESN'T EXPLODE OUT THE RIGHT SIDE */
     .container {
-        padding: 20px 15px; /* Shrunk from 40px so it fits phone screens beautifully */
+        padding: 25px 15px;
     }
 
-    /* --- Your Existing Mobile Rules Continue Below Safely --- */
     .navbar {
-        flex-direction: column; /* Stacks the logo section above the links */
+        flex-direction: column;
         gap: 12px;
         padding: 15px 10px;
     }
 
     .nav-links {
-        margin-left: 0; /* Centers the links on mobile */
-        gap: 20px;     /* Spaces links evenly so they are easy to tap */
+        margin-left: 0;
+        gap: 20px;
         width: 100%;
         justify-content: center;
-        padding: 0;     /* Clear any hidden default padding forcing it right */
+        padding: 0;
     }
     
     .logo-header {
@@ -476,29 +504,26 @@ button:active {
     }
 
     .logo-header h1 {
-        font-size: 26px; /* Slightly smaller brand text on phones */
+        font-size: 26px;
     }
 
-    /* Adjust the main hero heading so it doesn't look giant on a phone */
     h1 {
-        font-size: 32px !important;
+        font-size: 36px !important;
     }
     
     .subtitle {
         font-size: 18px;
     }
 
-    /* Fix the broken trust badges line wrap */
     .tone-tags {
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
 
-    /* Give the pill button text more room to breathe */
     .hero-note {
         padding: 10px 24px;
         max-width: 90%;
         box-sizing: border-box;
     }
-} /* The master closing bracket that locks everything inside the media query */
+}
