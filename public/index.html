@@ -4,28 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClearMail - AI Email Assistant</title>
+    
+    <!-- Premium Google Fonts Engine -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Browser Tab Icon (Favicon) -->
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <!-- Global Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
 <nav class="navbar">
-
     <div class="logo-header">
         <img src="logo.png" alt="ClearMail Logo" class="nav-logo">
         <h1>ClearMail</h1>
     </div>
 
     <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="about.html">About</a>
-    <a href="#pricing">Pricing</a>
-    
-</div>
-
+        <a href="#features">Features</a>
+        <a href="about.html">About</a>
+        <a href="#pricing">Pricing</a>
+    </div>
 </nav>
 
 <div class="hero">
@@ -56,10 +59,9 @@
 </div>
 
 <section id="features" class="features">
-
     <div class="feature">
         <h3>⚡ Fast</h3>
-        <p>Rewrite emails in seconds with one click.</p>
+        <p>Rewrite or generate email replies in seconds with one click.</p>
     </div>
 
     <div class="feature">
@@ -71,10 +73,15 @@
         <h3>✨ Professional</h3>
         <p>Instantly switch between Confidence, Friendliness, or Politeness to match your reader.</p>
     </div>
-
 </section>
 
 <div class="container" id="tool">
+
+    <!-- Mode Selector Tabs -->
+    <div class="mode-tabs">
+        <button id="tabRewrite" class="tab-btn active" onclick="switchMode('rewrite')">✨ Rewrite Email</button>
+        <button id="tabReply" class="tab-btn" onclick="switchMode('reply')">💬 Generate Reply</button>
+    </div>
 
     <div class="tone-tags">
         ✓ Professional
@@ -83,7 +90,13 @@
         ✓ Polite
     </div>
 
-    <textarea id="emailInput" placeholder="Paste your email here..."></textarea>
+    <!-- Main Text Input -->
+    <textarea id="emailInput" placeholder="Paste your draft or received email here..."></textarea>
+
+    <!-- Optional Reply Notes (Visible only in Reply Mode) -->
+    <div id="replyNotesContainer" style="display: none; margin-bottom: 15px;">
+        <textarea id="replyNotes" placeholder="What do you want to say in your reply? (e.g., Agree to meeting, ask for 3 PM instead)..."></textarea>
+    </div>
 
     <div class="card">
         <select id="tone">
@@ -95,7 +108,7 @@
 
         <br><br>
 
-        <button id="fixButton" onclick="fixEmail()">✨ Fix Email</button>
+        <button id="fixButton" onclick="processEmail()">✨ Fix Email</button>
     </div>
 
     <div class="card">
@@ -103,7 +116,7 @@
         <textarea id="output" readonly></textarea>
 
         <button id="copyButton" onclick="copyOutput()">📋 Copy Email</button>
-        <button id="regenerateButton" onclick="fixEmail()">
+        <button id="regenerateButton" onclick="processEmail()">
             🔄 Regenerate
         </button>
     </div>  
@@ -120,13 +133,14 @@
                 <li>✓ Lifetime 50% discount locked in forever</li>
             </ul>
             
-            <div id="waitlistForm">
-                <form id="waitlistForm" action="https://formspree.io/f/mdarqqqq" method="POST"></form>
+            <div id="waitlistFormContainer">
                 <p class="waitlist-text">We are capping Pro slots this week to protect server stability. Enter your email to lock in your discount code.</p>
-                <div class="input-group">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button class="pricing-button">Get Early Access</button>
-                </div>
+                <form id="waitlistForm" action="https://formspree.io/f/mdarqqqq" method="POST">
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                        <button type="submit" class="pricing-button">Get Early Access</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
