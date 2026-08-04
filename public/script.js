@@ -1,43 +1,46 @@
-let currentMode = "rewrite";
+let currentMode = 'rewrite'; // Default mode
 
 function switchMode(mode) {
     currentMode = mode;
 
-    const tabRewrite = document.getElementById("tabRewrite");
-    const tabReply = document.getElementById("tabReply");
-    const replyNotesContainer = document.getElementById("replyNotesContainer");
-    const emailInput = document.getElementById("emailInput");
-    const fixButton = document.getElementById("fixButton");
+    const tabRewrite = document.getElementById('tabRewrite');
+    const tabReply = document.getElementById('tabReply');
+    const emailInput = document.getElementById('emailInput');
+    const replyNotesContainer = document.getElementById('replyNotesContainer');
+    const fixButton = document.getElementById('fixButton');
 
-    if (mode === "reply") {
-        tabRewrite.classList.remove("active");
-        tabReply.classList.add("active");
-        replyNotesContainer.style.display = "block";
+    if (mode === 'reply') {
+        tabRewrite.classList.remove('active');
+        tabReply.classList.add('active');
+
         emailInput.placeholder = "Paste the email you received here...";
-        fixButton.innerHTML = "💬 Generate Reply";
+        replyNotesContainer.style.display = 'block';
+        fixButton.innerText = "💬 Generate Reply";
     } else {
-        tabReply.classList.remove("active");
-        tabRewrite.classList.add("active");
-        replyNotesContainer.style.display = "none";
+        tabReply.classList.remove('active');
+        tabRewrite.classList.add('active');
+
         emailInput.placeholder = "Paste your email here...";
-        fixButton.innerHTML = "✨ Fix Email";
+        replyNotesContainer.style.display = 'none';
+        fixButton.innerText = "✨ Fix Email";
     }
 }
 
 async function processEmail() {
-    const button = document.getElementById("fixButton");
+    const emailInput = document.getElementById("emailInput").value.trim();
+    const replyNotes = document.getElementById("replyNotes") ? document.getElementById("replyNotes").value.trim() : "";
+    const tone = document.getElementById("tone").value;
     const output = document.getElementById("output");
-    const emailText = document.getElementById("emailInput").value.trim();
-    const replyNotesText = document.getElementById("replyNotes") ? document.getElementById("replyNotes").value.trim() : "";
-    const selectedTone = document.getElementById("tone").value;
+    const fixButton = document.getElementById("fixButton");
 
-    if (!emailText) {
-        output.value = "Please paste an email first!";
+    if (!emailInput) {
+        alert(currentMode === 'reply' ? "Please paste the email you received!" : "Please enter an email to fix!");
         return;
     }
 
-    button.disabled = true;
-    button.textContent = currentMode === "reply" ? "💬 Generating Reply..." : "✨ Rewriting...";
+    const originalButtonText = fixButton.innerText;
+    fixButton.innerText = "✨ Generating...";
+    fixButton.disabled = true;
 
     try {
         const response = await fetch("/rewrite", {
@@ -46,41 +49,35 @@ async function processEmail() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                email: emailText,
-                tone: selectedTone,
+                email: emailInput,
+                tone: tone,
                 mode: currentMode,
-                replyNotes: replyNotesText
+                replyNotes: replyNotes
             })
         });
 
         const data = await response.json();
-
-        if (data.result) {
-            output.value = data.result;
-        } else {
-            output.value = "Something went wrong. Please try again.";
-        }
+        output.value = data.result;
 
     } catch (error) {
-        console.error(error);
-        output.value = "Something went wrong. Please check your connection and try again.";
+        console.error("Error:", error);
+        output.value = "Something went wrong. Please try again.";
     } finally {
-        button.disabled = false;
-        button.innerHTML = currentMode === "reply" ? "💬 Generate Reply" : "✨ Fix Email";
+        fixButton.innerText = originalButtonText;
+        fixButton.disabled = false;
     }
+}
+
+// Helper to keep legacy function calls working if triggered from HTML
+function fixEmail() {
+    processEmail();
 }
 
 function copyOutput() {
     const output = document.getElementById("output");
-
     if (!output.value) return;
 
-    navigator.clipboard.writeText(output.value);
-
-    const button = document.getElementById("copyButton");
-    button.textContent = "Copied ✔";
-
-    setTimeout(() => {
-        button.textContent = "📋 Copy Email";
-    }, 1500);
+    output.select();
+    document.execCommand("copy");
+    alert("Email copied to clipboard!");
 }
