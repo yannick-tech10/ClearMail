@@ -26,6 +26,23 @@ function switchMode(mode) {
     }
 }
 
+// Tone pill handler (updates hidden input & toggles button visual active state)
+function selectTone(selectedVal) {
+    const toneInput = document.getElementById('tone');
+    if (toneInput) {
+        toneInput.value = selectedVal;
+    }
+
+    const pills = document.querySelectorAll('.tone-pill');
+    pills.forEach(pill => {
+        if (pill.getAttribute('data-value') === selectedVal) {
+            pill.classList.add('active');
+        } else {
+            pill.classList.remove('active');
+        }
+    });
+}
+
 async function processEmail() {
     const emailInput = document.getElementById("emailInput").value.trim();
     const replyNotes = document.getElementById("replyNotes") ? document.getElementById("replyNotes").value.trim() : "";

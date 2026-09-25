@@ -97,14 +97,48 @@ textarea:focus {
     letter-spacing: 0.08em;
 }
 
-select {
-    width: 100%;
-    padding: 14px;
-    border-radius: 12px;
-    border: 1px solid #d1d5db;
-    font-size: 15px;
-    margin-top: 15px;
-    box-sizing: border-box;
+/* --- INTERACTIVE TONE PILL BUTTONS --- */
+.tone-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #475569;
+}
+
+.tone-pills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.tone-pill {
+    width: auto;
+    padding: 8px 18px;
+    border-radius: 9999px;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: #334155;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: none;
+    margin-top: 0;
+    transition: all 0.2s ease;
+}
+
+.tone-pill:hover {
+    background: #e2e8f0;
+    transform: none;
+    box-shadow: none;
+}
+
+.tone-pill.active {
+    background: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
 }
 
 /* --- BUTTON BUILD ENGINE --- */
@@ -332,16 +366,6 @@ button:active {
     font-size: 15px;
 }
 
-.tone-tags {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
-    margin: 18px 0 25px;
-    color: #6b7280;
-    font-weight: 500;
-}
-
 /* --- PREMIUM PRICING INFRASTRUCTURE --- */
 .pricing-section {
     max-width: 480px;
@@ -423,29 +447,31 @@ button:active {
     margin-bottom: 15px;
 }
 
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #d1d5db;
-    border-radius: 12px;
-    font-size: 15px;
-    box-sizing: border-box;
-}
-
-.input-group input:focus {
-    outline: none;
-    border-color: #2563eb;
-}
-
 .pricing-button {
     width: 100%;
     margin-top: 0;
+}
+
+.block-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
+    box-sizing: border-box;
+}
+
+.block-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 18px rgba(37, 99, 235, 0.30);
 }
 
 /* --- FOOTER BLOCKS --- */
@@ -515,12 +541,6 @@ button:active {
         font-size: 18px;
     }
 
-    .tone-tags {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
     .hero-note {
         padding: 10px 24px;
         max-width: 90%;
@@ -529,7 +549,7 @@ button:active {
 }
 
 /* --- DUAL MODE TAB NAVIGATION --- */
-.tab-container {
+.mode-tabs {
     display: flex;
     background: #f1f5f9;
     padding: 4px;
@@ -564,13 +584,4 @@ button:active {
     background: #ffffff;
     color: #2563eb;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-/* Hide inactive tab contents */
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
 }

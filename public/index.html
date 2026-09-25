@@ -83,13 +83,6 @@
         <button id="tabReply" class="tab-btn" onclick="switchMode('reply')">💬 Generate Reply</button>
     </div>
 
-    <div class="tone-tags">
-        ✓ Professional
-        ✓ Friendly
-        ✓ Confident
-        ✓ Polite
-    </div>
-
     <!-- Main Text Input -->
     <textarea id="emailInput" placeholder="Paste your draft or received email here..."></textarea>
 
@@ -98,15 +91,19 @@
         <textarea id="replyNotes" placeholder="What do you want to say in your reply? (e.g., Agree to meeting, ask for 3 PM instead)..."></textarea>
     </div>
 
+    <!-- Interactive Tone Selection Pills -->
     <div class="card">
-        <select id="tone">
-            <option value="professional">Professional</option>
-            <option value="friendly">Friendly</option>
-            <option value="confident">Confident</option>
-            <option value="polite">Polite</option>
-        </select>
+        <label class="tone-label">Select Tone:</label>
+        <div class="tone-pills-container">
+            <button type="button" class="tone-pill active" data-value="professional" onclick="selectTone('professional')">Professional</button>
+            <button type="button" class="tone-pill" data-value="friendly" onclick="selectTone('friendly')">Friendly</button>
+            <button type="button" class="tone-pill" data-value="confident" onclick="selectTone('confident')">Confident</button>
+            <button type="button" class="tone-pill" data-value="polite" onclick="selectTone('polite')">Polite</button>
+        </div>
+        <!-- Hidden input to store selected tone for script.js -->
+        <input type="hidden" id="tone" value="professional">
 
-        <br><br>
+        <br>
 
         <button id="fixButton" onclick="processEmail()">✨ Fix Email</button>
     </div>
@@ -123,24 +120,19 @@
 
     <section id="pricing" class="pricing-section">
         <div class="pricing-card">
-            <span class="badge">Early Bird Offer</span>
+            <span class="badge">LIFETIME DEAL</span>
             <h2>ClearMail Pro</h2>
-            <div class="price">$7<span>/month</span></div>
+            <div class="price">$15<span>/one-time</span></div>
             <ul class="pricing-features">
                 <li>✓ Uncapped daily email rewrites</li>
                 <li>✓ Priority AI generation speeds</li>
                 <li>✓ Save your favorite templates</li>
-                <li>✓ Lifetime 50% discount locked in forever</li>
+                <li>✓ One-time payment, lifetime access</li>
             </ul>
             
             <div id="waitlistFormContainer">
-                <p class="waitlist-text">We are capping Pro slots this week to protect server stability. Enter your email to lock in your discount code.</p>
-                <form id="waitlistForm" action="https://formspree.io/f/mdarqqqq" method="POST">
-                    <div class="input-group">
-                        <input type="email" name="email" placeholder="Enter your email" required>
-                        <button type="submit" class="pricing-button">Get Early Access</button>
-                    </div>
-                </form>
+                <p class="waitlist-text">Get full unlimited access forever with a single payment. No monthly subscriptions.</p>
+                <a href="YOUR_LEMON_SQUEEZY_CHECKOUT_URL" class="pricing-button block-btn">Get Lifetime Access</a>
             </div>
         </div>
     </section>
