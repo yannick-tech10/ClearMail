@@ -499,55 +499,6 @@ button:active {
     color: #1d4ed8;
 }
 
-/* --- GLOBAL MOBILE VIEWPORT REPAIRS --- */
-@media (max-width: 600px) {
-    html, body {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    .container {
-        padding: 25px 15px;
-    }
-
-    .navbar {
-        flex-direction: column;
-        gap: 12px;
-        padding: 15px 10px;
-    }
-
-    .nav-links {
-        margin-left: 0;
-        gap: 20px;
-        width: 100%;
-        justify-content: center;
-        padding: 0;
-    }
-    
-    .logo-header {
-        justify-content: center;
-        width: 100%;
-    }
-
-    .logo-header h1 {
-        font-size: 26px;
-    }
-
-    h1 {
-        font-size: 36px !important;
-    }
-    
-    .subtitle {
-        font-size: 18px;
-    }
-
-    .hero-note {
-        padding: 10px 24px;
-        max-width: 90%;
-        box-sizing: border-box;
-    }
-}
-
 /* --- DUAL MODE TAB NAVIGATION --- */
 .mode-tabs {
     display: flex;
@@ -584,4 +535,90 @@ button:active {
     background: #ffffff;
     color: #2563eb;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* --- GLOBAL MOBILE VIEWPORT REPAIRS --- */
+@media (max-width: 600px) {
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .container {
+        padding: 20px 12px !important;
+        width: 100% !important;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 10px;
+    }
+
+    .nav-links {
+        margin-left: 0;
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .logo-header {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .logo-header h1 {
+        font-size: 26px;
+    }
+
+    h1 {
+        font-size: 32px !important;
+        line-height: 1.2 !important;
+    }
+    
+    .subtitle {
+        font-size: 17px !important;
+        margin: 14px auto !important;
+    }
+
+    .hero-button {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+    }
+
+    .hero-note {
+        padding: 10px 16px;
+        max-width: 100%;
+        box-sizing: border-box;
+        font-size: 13px !important;
+    }
+
+    .trust {
+        font-size: 12px !important;
+        line-height: 1.6 !important;
+    }
+
+    .pricing-section {
+        width: 100% !important;
+        padding: 0 !important;
+        margin-top: 40px !important;
+    }
+
+    .pricing-card {
+        padding: 30px 16px !important;
+        width: 100% !important;
+    }
+
+    .tone-pills-container {
+        justify-content: center;
+    }
+
+    .tone-pill {
+        flex: 1 1 auto;
+        text-align: center;
+    }
 }
